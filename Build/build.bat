@@ -6,18 +6,18 @@ REM ============================================================================
 REM  Build Script
 REM ============================================================================
 
-REM Move to the root directory
-pushd %~dp0..
-
 echo.
 echo ============================================
 echo   Building Calculator
 echo ============================================
 echo.
 
-REM Build entire solution with restore
+REM Move to the root directory
+pushd %~dp0..
+
+REM Build and Restore Calculator project only
 echo -Building...
-dotnet build "ClassLib\src\Calculator.csproj" -c Debug
+dotnet build "ClassLib\src\Calculator.csproj" -c Release
 
 if %ERRORLEVEL% neq 0 (
     echo.
